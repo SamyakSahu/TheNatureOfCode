@@ -1,4 +1,4 @@
-// A simple overhaul to the traditional random walk example (I.1 as per the text)
+// A simple overhaul to the traditional random walk example (I.1 as per the text on the website)
 
 int[] c = {#F21616,#1C16F2,#16F231};
 float j = 0;
