@@ -1,0 +1,54 @@
+// A simple overhaul to the traditional random walk example (I.1 as per the text)
+
+int[] c = {#F21616,#1C16F2,#16F231};
+float j = 0;
+int i = 0;
+class walker{
+  int x;
+  int y;
+  
+  walker(){
+    x = width/2;
+    y = height/2;
+  }
+  
+  void display(){
+    stroke(0);
+    fill(c[i]);
+    rect(x,y,20,20);
+  }
+
+  void step(){
+    int step = 20;
+    int choice = int(random(4)); //to pick integers between 0 and 3
+    if(choice == 0){
+      x=x+step;
+    } else
+    if(choice == 1){
+      x=x-step;
+    } else
+    if(choice == 2){
+      y=y+step;
+    }else y=y-step;
+    x = constrain(x, 0, width-1);
+    y = constrain(y, 0, height-1);
+  }
+  
+  void rang(){
+    j = j + 0.5;
+    if(j==3) j = j-3;
+    i = int(j);
+  }  
+};
+
+walker w;
+
+void setup(){
+  size(1920,1080);
+  w = new walker();}
+
+void draw(){
+  w.step();
+  w.display();
+  w.rang();
+}
