@@ -1,0 +1,17 @@
+void setup(){
+  size(640,480);
+}
+
+void draw(){
+  background(255);
+  
+  PVector mouse = new PVector(mouseX, mouseY);
+  PVector center = new PVector(width/2, height/2);
+  mouse.sub(center);
+  float m = mouse.mag();
+  fill(0);
+  rect(0,0,m,10);
+  translate(width/2, height/2); //this moves the frame of reference to the given x and y coordinates
+  line(0,0,50*mouse.x/m, 50*mouse.y/m);
+}
+
